@@ -3,6 +3,7 @@ package edu.icet.service.impl;
 import edu.icet.dto.BookingDTO;
 import edu.icet.dto.Response;
 import edu.icet.repository.BookingRepository;
+import edu.icet.repository.SeatRepository;
 import edu.icet.service.BookingService;
 import edu.icet.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class BookingServiceImpl implements BookingService {
 
     private final BookingRepository bookingRepository;
-    //private final SeatRepository seatRepository;
+    private final SeatRepository seatRepository;
     private final ModelMapper modelMapper;
     private final UserService userService;
 
