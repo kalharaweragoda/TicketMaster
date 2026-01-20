@@ -1,5 +1,6 @@
 package edu.icet.controller;
 
+import edu.icet.annotation.AuditFailure;
 import edu.icet.dto.BookingDTO;
 import edu.icet.dto.Response;
 import edu.icet.service.BookingService;
@@ -15,12 +16,13 @@ public class BookingController {
     private final BookingService bookingService;
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @AuditFailure
     public ResponseEntity<Response> getAllBookings(){
         return ResponseEntity.ok(bookingService.getAllBookings());
     }
 
     @PostMapping
+    @AuditFailure
     public ResponseEntity<Response> createBooking(@RequestBody BookingDTO bookingDTO){
         return ResponseEntity.ok(bookingService.createBooking(bookingDTO));
     }

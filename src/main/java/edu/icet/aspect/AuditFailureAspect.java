@@ -14,14 +14,12 @@ public class AuditFailureAspect {
     @Around("@annotation(edu.icet.annotation.AduitFailure)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable{
 
-        //Before Execution
         long start = System.currentTimeMillis();
 
         String name = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
         Object proceed = joinPoint.proceed();
 
-        //End Execution
         long end = System.currentTimeMillis();
         log.info("Method Name |{}",name);
         log.info("Recieved Arguments |{}",args);

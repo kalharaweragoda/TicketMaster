@@ -2,6 +2,7 @@ package edu.icet.service.impl;
 
 import edu.icet.dto.BookingDTO;
 import edu.icet.dto.Response;
+import edu.icet.entity.Booking;
 import edu.icet.repository.BookingRepository;
 import edu.icet.repository.SeatRepository;
 import edu.icet.service.BookingService;
@@ -38,6 +39,18 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public Response updateBooking(BookingDTO bookingDTO) {
-        return null;
+        Booking booking = bookingRepository.findById(bookingDTO.getId())
+                .orElseThrow(() -> new RuntimeException("Booking not found"));
+
+        booking.setBookingStatus(bookingDTO.getBookingStatus());
+        booking.setAmountPaid(bookingDTO.getAmountPaid());
+
+        bookingRepository.save(booking);
+
+        return Response.builder()
+                .status(200)
+                .message("Booking updated successfully")
+                .build();
+    }
     }
 }
