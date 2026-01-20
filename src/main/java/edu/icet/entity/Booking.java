@@ -1,5 +1,7 @@
 package edu.icet.entity;
 
+import edu.icet.enums.BookingStatus;
+import edu.icet.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,14 +33,13 @@ public class Booking {
     @Column(nullable = false)
     private String status;
 
-//  @Enumerated(EnumType.STRING)
-//  private PaymentStatus paymentStatus;
-
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
 
 //  private String bookingReference;
 
-//  @Enumerated(EnumType.STRING)
-//  private BookingStatus bookingStatus;
+    @Enumerated(EnumType.STRING)
+    private BookingStatus bookingStatus;
 
     private final LocalDate createdAt = LocalDate.now();
 }

@@ -2,6 +2,8 @@ package edu.icet.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import edu.icet.enums.BookingStatus;
+import edu.icet.enums.PaymentStatus;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -21,8 +23,8 @@ public class BookingDTO {
     private double amountPaid;
     private String status;
 
-    //private PaymentStatus paymentStatus;
+    private PaymentStatus paymentStatus;
     //private String bookingReference;
-    //private BookingStatus bookingStatus;
+    private BookingStatus bookingStatus;
 
 }
