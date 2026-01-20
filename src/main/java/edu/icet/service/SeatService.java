@@ -8,7 +8,13 @@ import java.util.List;
 
 public interface SeatService {
 
+    static List<SeatStatus> getAllSeatStatus() {
+        return null;
+    }
+
     Response getAllSeats();
     Response deleteSeat(Long id);
     Response getAvailableSeats(LocalDate checkInDate, LocalDate checkOutDate, SeatStatus seatStatus);
+
+    Response searchSeat(String input);
 }

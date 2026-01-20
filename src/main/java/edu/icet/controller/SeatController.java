@@ -53,4 +53,15 @@ public class SeatController {
         return ResponseEntity.ok(seatService.getAvailableSeats(checkInDate, checkOutDate, seatStatus));
     }
 
+    @GetMapping("/types")
+    public ResponseEntity<List<SeatStatus>> getAllSeatStatus(){
+        return ResponseEntity.ok(SeatService.getAllSeatStatus());
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Response> searchSeat(@RequestParam String input){
+        return ResponseEntity.ok(seatService.searchSeat(input));
+    }
+
+
 }

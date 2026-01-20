@@ -22,4 +22,9 @@ public class SeatServiceImpl implements SeatService {
     public Response getAvailableSeats(LocalDate checkInDate, LocalDate checkOutDate, SeatStatus seatStatus) {
         return null;
     }
+
+    @Override
+    public Response searchSeat(String input) {
+        return null;
+    }
 }
