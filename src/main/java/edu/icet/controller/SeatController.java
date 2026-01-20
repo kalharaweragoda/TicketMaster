@@ -18,6 +18,15 @@ public class SeatController {
 
     private final SeatService seatService;
 
+    @PostMapping("/{id}/hold")
+    public String holdSeat(
+            @PathVariable("id") Long seatId,
+            @RequestParam Long userId) {
+
+        seatService.holdSeat(seatId, userId);
+        return "Seat held successfully for 10 minutes";
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Response> addSeat(
             @RequestParam Integer SeatNumber,
