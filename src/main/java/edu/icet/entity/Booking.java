@@ -39,4 +39,6 @@ public class Booking {
 
 //  @Enumerated(EnumType.STRING)
 //  private BookingStatus bookingStatus;
+
+    private final LocalDate createdAt = LocalDate.now();
 }

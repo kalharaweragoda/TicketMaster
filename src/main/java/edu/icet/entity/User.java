@@ -1,5 +1,6 @@
 package edu.icet.entity;
 
+import edu.icet.enums.UserTire;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -21,9 +22,11 @@ public class User {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    //private UserTire tire;
+    private UserTire tire;
 
     @NotBlank(message = "Email is required")
     @Column(unique = true)
     private String email;
+
+    private final LocalDate createdAt = LocalDate.now();
 }
