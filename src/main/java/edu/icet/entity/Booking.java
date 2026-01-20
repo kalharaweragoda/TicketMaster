@@ -18,14 +18,14 @@ import java.time.LocalDate;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "seat_id", nullable = false)
-    private int seatId;
+    private Long seatId;
 
     @Column(name = "amount_paid", nullable = false)
     private double amountPaid;

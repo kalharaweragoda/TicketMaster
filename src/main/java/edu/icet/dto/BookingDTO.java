@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BookingDTO {
-    private int id;
+    private Long id;
     private UserDTO user;
     private SeatDTO seatId;
     private double amountPaid;
