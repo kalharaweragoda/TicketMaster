@@ -4,6 +4,7 @@ import edu.icet.dto.PriceResponseDTO;
 import edu.icet.entity.Event;
 import edu.icet.entity.User;
 import edu.icet.strategy.PriceStrategy;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.EnumMap;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class PriceCalculatorService {
 
     private final Map<User, PriceStrategy> strategyMap = new EnumMap<>(User.class);

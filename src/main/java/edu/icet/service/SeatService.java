@@ -17,4 +17,6 @@ public interface SeatService {
     Response getAvailableSeats(LocalDate checkInDate, LocalDate checkOutDate, SeatStatus seatStatus);
 
     Response searchSeat(String input);
+
+    void holdSeat(Long seatId, Long userId);
 }
